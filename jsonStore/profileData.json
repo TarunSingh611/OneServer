@@ -1,0 +1,93 @@
+{
+    "personalInfo": {
+        "name": "Tarun Singh",
+        "title": "frontend Developer",
+        "bio": "Crafting sleek and user-centric solutions with passion for innovation and collaboration. The journey of any aspiring developer starts with a single step.",
+        "location": "Udhampur, Jammu and Kashmir, India, 182121",
+        "phone": "+917006072897",
+        "email": "thakurtarun936@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/tarunsinghrajput/",
+        "github": "https://github.com/thakurtarun936",
+        "skills": [
+            {"title":"advanced","skills": ["Next.js", "Node.js (Express)", "React (Next.js)", "JavaScript"]},
+            {"title":"intermediate","skills": ["MongoDB", "MySQL", "Git"]},
+            {"title":"basic","skills": ["C++", "C#", "HTML", "CSS"]}
+        ]
+    },
+    "Quotes":[
+        {
+            "quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+            "by":"Martin Fowler"
+        },
+        {
+            "quote": "If debugging is the process of removing software bugs, then programming must be the process of putting them in.",
+            "by":"Edsger W. Dijkstra"
+        },
+        {
+            "quote": "The only way to learn a new programming language is by writing programs.",
+            "by":"Dennis Ritchie"
+        },
+        {
+            "quote": "Success is not about how fast you finish writing code, but how well you understand the problem.",
+            "by": "Steve McConnell"
+        },
+        {
+            "quote": "Programming is not just about typing code; it's about thinking logically and solving problems creatively.",
+            "by": "Steve Jobs"
+        },
+        {
+            "quote": "Like building a house, coding requires a strong foundation of logic and structure.",
+            "by": "Bill Gates"
+        },
+        {
+            "quote": "In coding, as in life, mistakes are inevitable. What matters is how you learn from them and improve.",
+            "by": "Bill Gates"
+        },
+        {
+            "quote": "The beauty of coding lies not only in its functionality but also in its elegance and simplicity.",
+            "by": "Larry Wall"
+        },
+        {
+            "quote": "Coding teaches us patience and perseverance, as we strive to turn ideas into reality one line at a time.",
+            "by": "Chris Pine"
+        },
+        {
+            "quote": "Just as every story has a beginning, middle, and end, every code has its own logic, process, and outcome.",
+            "by": "Unknown"
+        },
+        {
+            "quote": "Coding is like a puzzle; it challenges us to think critically and creatively to find the best solution.",
+            "by": "Maxime Lagacé"
+        },
+        {
+            "quote": "Coding is not about being perfect; it's about making progress and continuously learning along the way.",
+            "by": "Unknown"
+        }
+        
+    ],
+    "Sections": [
+        {
+            "order":1,
+            "name":"About Me",
+            "link":"/resume",
+            "description":"Learn more about my background, education, and experience as a developer.",
+            "buttonText": "View",
+            "image":"aboutMe.jpg"
+        },
+        {   "order":2,
+            "name":"Projects",
+            "link":"/projects",
+            "description":"Explore my portfolio of projects, showcasing my skills and expertise.",
+            "buttonText": "View",
+            "image":"projects.jpg"
+        },
+        {   "order":3,
+            "name":"Blog",
+            "link":"/blog",
+            "description":"Read my thoughts and insights on web development, emerging technologies, and more.",
+            "buttonText": "View",
+            "image":"blog.jpg"
+        }
+    ]
+
+}

@@ -1,0 +1,96 @@
+{
+  "personalInfo": {
+    "name": "Tarun Singh",
+    "contact_info": {
+      "location": "Udhampur, Jammu and Kashmir, India, 182121",
+      "phone": "+917006072897",
+      "email": "thakurtarun936@gmail.com",
+      "social_links": {
+        "linkedin": "https://www.linkedin.com/in/tarunsinghrajput/",
+        "github": "https://github.com/thakurtarun611"
+      }
+    }
+  },
+  "summary": "Enthusiastic Software Engineer Specializing in Next.js framework with proficiency in both frontend and backend development. Skilled in crafting sleek and user-centric solutions, with a passion for innovation and collaboration.",
+  "certifications": [
+    {
+      "title": "abc",
+      "issuer": "Amazon",
+      "date_issued": "2021-03-01",
+      "description": "Earned certification in cloud architecture..."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project Y",
+      "description": "Developed a web application...",
+      "technologies": [
+        "React",
+        "Node.js"
+      ],
+      "link": "https://github.com/johndoe/project-y"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Developer",
+      "company": "BetterCommerce - Axtrum Solution Limited, Noida",
+      "start_date": "04-09-2023",
+      "end_date": "Present",
+      "Location": "Noida",
+      "decription": [
+        "Proactively contributed to frontend development, implementing responsive design for seamless user interaction across devices.",
+        "Delivered key features, demonstrating readiness to innovate further with continuous learning and improvement."
+      ]
+    },
+    {
+      "title": "Programmer Intern",
+      "company": "Codequotient, Mohali",
+      "start_date": "10-4-2023",
+      "end_date": "1-8-2023",
+      "Location": "Mohali",
+      "description": [
+        "Acquired skills in web development, progressing from foundational technologies like HTML, CSS, and JavaScript to advanced stacks like MERN (MongoDB, Express.js, React.js, Node.js).",
+        "Gained proficiency in database management with MySQL.",
+        "Expanded programming knowledge with C++ and .NET."
+      ]
+    }
+  ],
+  "education": [
+     {
+      "field": "Computer Engineering (B.E.)",
+      "institution": "Government College of Engineering and Technology, Udhampur",
+      "start_date": "01-Aug 2019",
+      "end_date": "01-Sep 2023",
+      "Location": "Jammu, Jammu and Kashmir, India, 182121",
+      "description": ""
+
+    },
+     {
+      "field": "X-XII(PCM)",
+      "institution": "Army Public School, Udhampur",
+      "start_date": "01-Apr 2016",
+      "end_date": "01-May 2019",
+      "description": "",
+      "Location": "Udhampur, Jammu and Kashmir, India, 182121"
+    }
+  ],
+  "languages": [
+    { "language": "English", "proficiency": "Fluent" },
+    { "language": "Spanish", "proficiency": "Intermediate" }
+  ],
+  "skills": [
+    { "name": "Next.js", "score": 95 },
+    { "name": "Node.js (Express)", "score": 90 },
+    { "name": "React (Next.js)", "score": 85 },
+    { "name": "JavaScript", "score": 90 },
+    { "name": "MongoDB", "score": 75 },
+    { "name": "MySQL", "score": 70 },
+    { "name": "Git", "score": 65 },
+    { "name": "C++", "score": 55 },
+    { "name": "C#", "score": 50 },
+    { "name": "HTML", "score": 60 },
+    { "name": "CSS", "score": 60 }
+  ]
+
+}
