@@ -15,6 +15,8 @@ import authentication from "./authRoutes.mjs";
 import userRoutes from "./userRoutes.mjs";
 import portfolioRoutes from "./portfolioRoutes.mjs";
 import reactionRoutes from "./reactionRoutes.mjs";
+import feedRoutes from "./feedRoutes.mjs"
+
 export default function initializeRoutes(app) {
 	app.use(BearerAuth);
 	app.use("/guest", guestRoutes);
@@ -33,6 +35,7 @@ export default function initializeRoutes(app) {
 	app.use("/user", userRoutes);
 	app.use("/reaction", reactionRoutes);
 	app.use("/settings", settingRoutes)
+	app.use("/feed", feedRoutes)
 
 	app.use("*", (req, res) => {
 		res.status(404).json({

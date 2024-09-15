@@ -11,7 +11,7 @@ const validRoutes = {
   portfolio: ["auth", "misc", "guest", "resume", "projects", "blogs", "settings", "portfolio"],
   resumemaker: ["auth", "misc", "guest", "resume", "settings"],
   codezone: ["auth", "misc", "guest", "profile", "problems", "solutions", "discuss", "settings", "blog"],
-  socialSphere : ["auth", "misc", "guest", "user", "settings"],
+  socialSphere : ["auth", "misc", "guest", "user", "settings","feed" , "explore"],
 };
 
 

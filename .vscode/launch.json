@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/index.mjs",
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"], // Optional: specify the output files location if using a transpiler
+            "runtimeExecutable": null, // Optional: specify if you need a different Node.js executable
+            "runtimeArgs": [], // Optional: pass any runtime arguments
+            "console": "integratedTerminal", // Use 'integratedTerminal' for the built-in terminal, or 'externalTerminal' for a separate terminal window
+            "env": { // Optional: specify environment variables
+                "NODE_ENV": "development"
+            },
+            "envFile": "${workspaceFolder}/.env" // Optional: specify environment variables from a file
+        }
+    ]
+}

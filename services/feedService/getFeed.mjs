@@ -1,10 +1,10 @@
 import PostModel from "../../models/postModel.mjs";
 import LikeModel from "../../models/likeModels.mjs";
 
-async function getFeed(user, tokenId, page = 1, pageSize = 9) {
+async function getFeed(userId, tokenId, page = 1, pageSize = 9) {
   try {
     const skipCount = (page - 1) * pageSize;
-
+    const user = await UserModel.find({_id : userId})
     const posts = await PostModel.find({
       $or: [
         { user: user._id },

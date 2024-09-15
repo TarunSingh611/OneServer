@@ -4,7 +4,7 @@ import {
   getFullName,
 } from "../../Repositories/SearchRepo/SearchRepo.mjs";
 
-async function exploreSearch(data, type ,tokenId) {
+async function exploreSearch(data, type ) {
    
     if (!data) {
       return { statusCode: 400 };
@@ -15,7 +15,7 @@ async function exploreSearch(data, type ,tokenId) {
     const result = await getUserName(dataArray[0]);
     return { type, statusCode: 200, result };
   } else if (type == "hashtag") {
-    const result = await getPostsByHashtags(dataArray,tokenId);
+    const result = await getPostsByHashtags(dataArray);
     return { type, statusCode: 200, result };
   } else if (type == "name") {
     const result = await getFullName(dataArray);

@@ -1,6 +1,7 @@
 import userModel from "../../models/userModel.mjs";
-import { generateVerificationToken } from "../../services/misc/generateVerificationToken.mjs";
+import { generateVerificationToken, clearVerificationToken } from "../../services/misc/generateVerificationToken.mjs";
 import { generateToken, verifyToken } from "../../utils/jwtUtils.mjs";
+import VerificationToken from "../../models/verificationModel.mjs";
 import  loginUser from "../../services/userService/userLogin.mjs";
 import { registerUser } from '../../services/userService/userRegister.mjs';
 import  sendEmail  from "../../utils/sendNodeMail.mjs";
@@ -51,7 +52,7 @@ export const verificationCodeController = async (req, res) => {
                 message: "Invalid email",
             });
         }
-        const verificationToken = await generateVerificationToken(user?._id);
+        const verificationToken = await generateVerificationToken(user?._id,email);
         sendEmail(email, `verificationCode`, verificationToken).then((success) => {
             console.log('Email sent:', success);
         })
@@ -74,20 +75,21 @@ export const verificationController = async (req, res) => {
     try {
         const { email, verificationCode } = req.body;
         const user = await userModel.findOne({ email });
+        const verificationToken = await VerificationToken.findOne({ email }).exec();
         if (!user) {
             return res.status(200).json({
                 statusCode: 401,
                 message: "Invalid email",
             });
         }
-        if (user?.verificationCode?.token !== verificationCode) {
+        if (verificationToken?.token !== verificationCode) {
             return res.status(200).json({
                 statusCode: 401,
                 message: "Invalid verification code",
             });
         }
         user.emailVerified = true;
-        user.verificationCode.token = "";
+        clearVerificationToken({email})
         await user.save();
         
         let token;

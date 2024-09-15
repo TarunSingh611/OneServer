@@ -44,7 +44,7 @@ import LikeModel from "../../models/likeModels.mjs";
     }
   }
   /////////////////////////////////////////////////////////////////////////////////////
-  async function getPostsByHashtags(words,tokenId) {
+  async function getPostsByHashtags(words) {
     try {
       if (!words || words.length === 0) {
         throw new Error("No words found in the input text");
@@ -82,7 +82,7 @@ import LikeModel from "../../models/likeModels.mjs";
 
       for (const post of filteredPosts) {
         try {
-          const like = await LikeModel.findOne({ contentId: post._id, userId: tokenId });
+          const like = await LikeModel.findOne({ contentId: post._id});
           post.liked = Boolean(like);
 
         } catch (error) {
