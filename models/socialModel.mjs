@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 const socialUserSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     followersCount: { type: Number, default: 0 },

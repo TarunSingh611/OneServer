@@ -7,7 +7,7 @@ const jwtMiddleware = async (req, res, next) => {
     try {
       const decodedToken = verifyToken(token);
       if(decodedToken) {
-        req.body.userId = decodedToken.userId; 
+        req.userId = decodedToken.userId; 
       }
     } catch (error) {
       return res.status(403).json({ message: 'Forbidden: Invalid token' });

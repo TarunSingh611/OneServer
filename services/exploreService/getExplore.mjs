@@ -1,15 +1,15 @@
 import PostModel from "../../models/postModel.mjs";
 import LikeModel from "../../models/likeModels.mjs";
-import User from "../../models/userModel.mjs";
+import {getUserSocialProfile} from "../../services/userService/getUserSocial.mjs"
 
 async function getExplore(userId, page = 1, pageSize = 9) {
   try {
     const skipCount = (page - 1) * pageSize;
 
     // Fetch user data and determine the condition for posts
-    const user = userId ? await User.findById(userId) : null;
-    const excludedUserIds = user ? [user._id, ...user.following] : [];
-    const isUserExcluded = excludedUserIds.length > 0;
+    const user = userId ? await getUserSocialProfile(userId) : null;
+    const excludedUserIds = user ? [user?._id, ...user?.following] : [];
+    const isUserExcluded = excludedUserIds?.length > 0;
 
     // Query posts with conditions applied
     const query = {
