@@ -28,7 +28,7 @@ const registerUser = async ({
 
     await newUser.save();
 
-    const verificationToken = await generateVerificationToken(newUser._id);
+    const verificationToken = await generateVerificationToken(newUser._id, email);
     
     sendEmail(email, 'verificationCode', verificationToken).then((success) => {
       console.log('Email sent:', success);

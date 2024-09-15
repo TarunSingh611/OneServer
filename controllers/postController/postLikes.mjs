@@ -10,7 +10,7 @@ export async function postLikes(req, res) {
     res.json(likes);
   } 
   
-  export async function deleteLikes(req, res) {
+  export async function removeLikes(req, res) {
     const postId = req.query.postId;
     const userId = req?.userId
     if (!userId) {

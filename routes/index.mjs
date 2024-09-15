@@ -15,7 +15,8 @@ import authentication from "./authRoutes.mjs";
 import userRoutes from "./userRoutes.mjs";
 import portfolioRoutes from "./portfolioRoutes.mjs";
 import reactionRoutes from "./reactionRoutes.mjs";
-import feedRoutes from "./feedRoutes.mjs"
+import feedRoutes from "./feedRoutes.mjs";
+import postRoutes from "./postRoutes.mjs";
 
 export default function initializeRoutes(app) {
 	app.use(BearerAuth);
@@ -36,7 +37,7 @@ export default function initializeRoutes(app) {
 	app.use("/reaction", reactionRoutes);
 	app.use("/settings", settingRoutes)
 	app.use("/feed", feedRoutes)
-
+	app.use("/post",postRoutes)
 	app.use("*", (req, res) => {
 		res.status(404).json({
 			message: "Not Found",

@@ -1,11 +1,14 @@
 import mongoose from "mongoose";
 import hashPasswordMiddleware from "../middleware/hashPasswordMiddleware.mjs";
+import SocialUser from '../models/socialModel.mjs';
+import Portfolio from '../models/portfolio.mjs';
 
 // Core User Schema
 const userSchema = new mongoose.Schema({
   firstName: { type: String, trim: true, required: true },
   lastName: { type: String, trim: true, required: true, default: "" },
   email: { type: String, trim: true, unique: true, required: true, index: true },
+  bio: {type: String , trim:true, default :""},
   username: {
     type: String,
     trim: true,
@@ -39,5 +42,35 @@ const userSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 userSchema.pre("save", hashPasswordMiddleware);
+
+// userSchema.post("save", async function(doc) {
+//   try {
+//     // Create a default SocialUser entry
+//     await SocialUser.create({
+//       userId: doc._id,
+//       // other fields can be default or omitted as needed
+//     });
+
+    // Create a default Portfolio entry
+//     await Portfolio.create({
+//       userId: doc._id,
+//       personalInfo: {
+//         name : doc.firstName + ' ' + doc.lastName,
+//         contact: {
+//           email: doc.email,
+//           phone: doc.phone,
+//         },
+//         image: '',
+//         bio: '',
+//         languages: []
+//       },
+//       sections: []
+//     });
+
+//   } catch (error) {
+//     console.error("Error creating default entries for new user:", error);
+//   }
+// });
+
 const User = mongoose.model("User", userSchema);
 export default User;

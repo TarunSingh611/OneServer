@@ -1,4 +1,3 @@
-import { userGetUserName } from "../../controllers/userController/userGetUserName.mjs";
 import PostModel from "../../models/postModel.mjs";
 import User from "../../models/userModel.mjs";
 import LikeModel from "../../models/likeModels.mjs";

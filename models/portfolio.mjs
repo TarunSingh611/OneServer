@@ -1,6 +1,9 @@
+import mongoose from "mongoose";
+
 const portfolioPersonalInfoSchema = new mongoose.Schema({
     personalInfo: {
-      name: { type: String, trim: true },
+      firstName: { type: String, trim: true },
+      lastName : { type: String, trim: true },
       contact: {
         email: { type: String, trim: true, lowercase: true },
         phone: { type: String, trim: true },

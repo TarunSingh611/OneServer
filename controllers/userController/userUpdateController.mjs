@@ -10,7 +10,7 @@ export const userUpdateController = async (req, res) => {
         }
 
         const result = await updateUser(userId, data);
-        res.status(200).json({statusCode : 200, user });
+        res.status(200).json({statusCode : 200, result });
  
 
     } catch (error) {
