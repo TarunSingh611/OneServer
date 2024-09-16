@@ -6,6 +6,6 @@ export const getFeed = async(req, res) => {
       throw new Error('User not found');
     }
     const result = await getFeedService(userId);
-    res.statusCode(result.statusCode).json(result);
+    res.status(result.statusCode).json(result);
   };
   

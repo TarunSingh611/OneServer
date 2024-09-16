@@ -5,10 +5,7 @@ const userPost = async (req, res) => {
   const userId = req?.userId;
   const pno = req.query.pno;
 
-  const token = req.header("jwttoken");
-  const tokenData = await getUserByToken(token);
-
-  if (!tokenData) {
+  if (!userId) {
     return res.status(403).json({ message: "Forbidden: Invalid username" });
   }
 
@@ -16,8 +13,6 @@ const userPost = async (req, res) => {
 
         const result = await getUserPostsByUserId(userId, userId, pno);
         return res.json(result);
-
-
   }
 };
 

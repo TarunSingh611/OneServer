@@ -1,5 +1,6 @@
-import userModel from "../../models/userModel.mjs";
+
 import { getUserProfile, getUserName } from "../../services/userService/userGetUsername.mjs";
+import {getUserSocialProfile} from "../../services/userService/getUserSocial.mjs"
 export const userProfileController = async (req, res) => {
     const userId = req?.userId
     try {
@@ -9,7 +10,7 @@ export const userProfileController = async (req, res) => {
                 .json({ message: "Forbidden: Invalid userId", statusCode: 403 });
         }
 
-        const user = await userModel.findOne({ _id: userId });
+        const user = await getUserSocialProfile(userId);
         res.status(200).json({ statusCode: 200, user });
 
 
@@ -29,7 +30,7 @@ export const userGetProfileById = async (req, res) => {
 };
 
 export const userGetUserName = async (req, res) => {
-    const userId = req.userId
+    const userId = req.query.userId
     if (!userId) {
         return res.status(403).json({ message: "Forbidden: Invalid username" });
     }

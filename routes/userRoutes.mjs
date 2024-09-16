@@ -13,6 +13,7 @@ router.get("/getProfile/:userId", userGetProfileById);
 router.put("/update", userUpdateController);
 router.put("/updateSecurity", userUpdateSecurity);
 router.put("/setPicture", upload.single('file'), userSetPicture);
+router.get("/getUserName", userGetUserName);
 
 export default router;
 
