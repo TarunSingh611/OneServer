@@ -1,5 +1,6 @@
 import User from "../../models/userModel.mjs";
 import Portfolio from "../../models/portfolioModel.mjs";
+import {getUserSocialProfile} from "../../services/userService/getUserSocial.mjs"
 
 /**
  * Get basic user information including social data.
@@ -8,7 +9,7 @@ import Portfolio from "../../models/portfolioModel.mjs";
  */
 export async function getUserName(userId, includePortfolio = false) {
   try {
-    const targetUser = await User.findById(userId);
+    const targetUser = await getUserSocialProfile(userId);
     if (!targetUser) {
       return { error: "User not found", statusCode: 404 };
     }
@@ -48,7 +49,7 @@ export async function getUserName(userId, includePortfolio = false) {
  */
 export async function getUserProfile(userId, includePortfolio = false) {
   try {
-    const targetUser = await User.findById(userId);
+    const targetUser = await getUserSocialProfile(userId);
     if (!targetUser) {
       return { error: "User not found", statusCode: 404 };
     }
