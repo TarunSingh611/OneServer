@@ -26,7 +26,7 @@ const setPicture = async (userId, picture, type) => {
 		)}${path.extname(picture.originalname)}`;
 
 		// Upload the new image to ImageKit with the unique name
-		const uploadResponse = imagekit.upload({
+		const uploadResponse = await imagekit.upload({
 			file: fs.createReadStream(picture.path),
 			fileName: uniqueName,
 			folder: folder,

@@ -1429,6 +1429,26 @@
         }
       }
     },
+    "/user/getUserName": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
     "/reaction/like": {
       "put": {
         "description": "",
@@ -1593,11 +1613,6 @@
       "get": {
         "description": "",
         "parameters": [
-          {
-            "name": "jwttoken",
-            "in": "header",
-            "type": "string"
-          },
           {
             "name": "pno",
             "in": "query",

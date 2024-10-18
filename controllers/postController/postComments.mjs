@@ -5,13 +5,22 @@ import {
     deletePostComments,
 } from "../../services/postService/setPostComments.mjs";
 
-export async function postComments(req, res) {
+export async function getComments(req, res) {
     const cno = req.query.cno;
     const order = req.query.order;
     const postId = req.query.postId;
     const comments = await getPostComments(postId, order, cno);
     res.json(comments);
 }
+
+export async function postComment(req, res){
+    const data = req.body.comment;
+    const userId = req?.userId
+    const postId = req.query.postId;
+    const comments = await postPostComments(postId, userId, data);
+    res.json(comments);
+}
+
 export async function changeComment(req, res) {
     const data = req.body.comment;
     const postId = req.query.postId;

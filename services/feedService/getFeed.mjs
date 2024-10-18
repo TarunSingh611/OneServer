@@ -1,5 +1,6 @@
 import PostModel from "../../models/postModel.mjs";
 import LikeModel from "../../models/likeModels.mjs";
+import UserModel from "../../models/userModel.mjs";
 
 async function getFeed(userId, tokenId, page = 1, pageSize = 9) {
   try {

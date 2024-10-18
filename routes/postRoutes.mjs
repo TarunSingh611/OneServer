@@ -4,7 +4,7 @@ import { postImage } from "../controllers/postController/postImage.mjs";
 import { userPost } from "../controllers/postController/postUserPost.mjs";
 // Import other functions as needed
 // import { getLikes, deleteLikes, modifyLikes } from "../controllers/postController/postLikes.mjs";
-// import { getComments, postComment, changeComment, deleteComment } from "../controllers/postController/postComments.mjs";
+import { getComments, postComment, changeComment, deleteComment } from "../controllers/postController/postComments.mjs";
 
 const router = express.Router();
 const upload = multer({ dest: 'public/' });
@@ -17,9 +17,9 @@ router.get("/userPost", userPost);
 // router.get("/likes", getLikes);
 // router.delete("/likes", deleteLikes);
 // router.put("/likes", modifyLikes);
-// router.get("/comments", getComments);
-// router.post("/comments", postComment);
-// router.put("/comments", changeComment);
-// router.delete("/comments", deleteComment);
+router.get("/comments", getComments);
+router.post("/comments", postComment);
+router.put("/comments", changeComment);
+router.delete("/comments", deleteComment);
 
 export default router;
