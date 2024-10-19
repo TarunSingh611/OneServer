@@ -17,6 +17,7 @@ export async function getUserName(userId, includePortfolio = false) {
     // Basic social profile structure
     const user = {
       _id: targetUser._id,
+      userId: targetUser.userId,
       username: targetUser.username,
       fullName: targetUser.fullName,
       userVerified: targetUser.userVerified,
@@ -50,7 +51,7 @@ export async function getUserName(userId, includePortfolio = false) {
 export async function getUserProfile(userId, includePortfolio = false) {
   try {
     const targetUser = await getUserSocialProfile(userId);
-    if (!targetUser) {
+    if (targetUser.success === false) {
       return { error: "User not found", statusCode: 404 };
     }
 

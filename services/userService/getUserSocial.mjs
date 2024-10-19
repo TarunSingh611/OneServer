@@ -5,7 +5,6 @@ export const getUserSocialProfile = async (userId) => {
   try {
     // Fetch user data
     const user = await User.findById(userId).exec();
-
     if (!user) {
       return { success: false, message: "User not found" };
     }
@@ -19,7 +18,7 @@ export const getUserSocialProfile = async (userId) => {
       await socialData.save();
     }
   
-    const result = { ...user.toObject(), ...socialData.toObject()}
+    const result = { ...user.toObject(), socialMediaData:socialData.toObject()}
     return result;
   } catch (error) {
     console.error("Error fetching user profile:", error);

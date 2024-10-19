@@ -5,7 +5,7 @@ import UserModel from "../../models/userModel.mjs";
 async function getFeed(userId, tokenId, page = 1, pageSize = 9) {
   try {
     const skipCount = (page - 1) * pageSize;
-    const user = await UserModel.find({_id : userId})
+    const user = (await UserModel.find({_id : userId}))?.[0]
     const posts = await PostModel.find({
       $or: [
         { user: user._id },

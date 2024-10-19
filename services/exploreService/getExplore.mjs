@@ -8,7 +8,7 @@ async function getExplore(userId, page = 1, pageSize = 9) {
 
     // Fetch user data and determine the condition for posts
     const user = userId ? await getUserSocialProfile(userId) : null;
-    const excludedUserIds = user ? [user?._id, ...user?.following] : [];
+    const excludedUserIds = user ? [user?._id, ...user?.socialMediaData?.following] : [];
     const isUserExcluded = excludedUserIds?.length > 0;
     // Query posts with conditions applied
     const query = {
@@ -21,7 +21,7 @@ async function getExplore(userId, page = 1, pageSize = 9) {
       .sort({ createdDate: -1 })
       .skip(skipCount)
       .limit(pageSize)
-      .populate('user', 'fullName username profilePicture accountType following followers friends pendingFollowers')
+      .populate('user', 'firstName lastName username accountType')
       .exec();
 
     // Determine which posts are liked by the user
