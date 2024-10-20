@@ -92,10 +92,10 @@ export const verificationController = async (req, res) => {
         clearVerificationToken({email})
         await user.save();
         
-        let token;
-        if(verifyToken(req?.token)){ token = req?.token }
-        else{ token = generateToken(user) }
-        res.setHeader('jwtToken', result.token).status(200).json({
+        let code;
+        if(verifyToken(req?.token)){ code = req?.token }
+        else{ code = generateToken(user) }
+        res.setHeader('jwtToken', code).status(200).json({
             statusCode: 200,
             user,
             message: "Email verified successfully",

@@ -42,14 +42,10 @@ const setPicture = async (userId, picture, type) => {
 				// Get fileId for the old image using its path
 				const oldImageDetails = imagekit.getFileDetails(
 					{
-						path: `${folder}/${oldImage}`,
+						url: `${IMAGEKIT_URL_ENDPOINT}/${folder}/${oldImage}`
 					}
 				);
-
-				const fileId = oldImageDetails.data._id;
-
-				console.log(fileId);
-
+				const fileId = oldImageDetails?.data?._id;
 				// Attempt to delete the old image
 				const deleteResponse = await imagekit.deleteFile(
 					fileId
