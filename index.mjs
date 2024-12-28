@@ -9,7 +9,8 @@ import { Server as socketIO } from "socket.io";
 import initializeSocketIO from "./sockets/index.mjs";
 import initializeRoutes from "./routes/index.mjs";
 import swaggerUi from "swagger-ui-express";
-import swaggerDocument from "./swagger-output.json" assert { type: "json" };
+import { statusHTML } from './statusHTML.mjs';
+const swaggerDocument = await import('./swagger-output.json', { assert: { type: 'json' } }).then(module => module.default);
 
 const app = express();
 const server = http.createServer(app);
@@ -42,6 +43,7 @@ app.use(
 );
 
 mongoose.connect(MONGO_URI_FULL);
+app.get('/', (req, res) => { res.send(statusHTML); });
 initializeSocketIO(io);
 initializeRoutes(app);
 
